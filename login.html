@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="calculadora_pmerj.css">
+  <title>Acesso — Calculadora de Salário PM</title>
+  <style>
+    /* a página de login reaproveita o CSS da calculadora;
+       só os campos de texto/senha precisam de estilo (o CSS base cobre number/select) */
+    .wrap { max-width: 420px; }
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--borda);
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--texto);
+    }
+    input[type=text]:focus, input[type=password]:focus {
+      outline: none;
+      border-color: var(--acento);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.08);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="header-text">
+        <div class="brasao">Polícia Militar RJ</div>
+        <h1>Acesso à Calculadora</h1>
+        <p>Entre com suas credenciais</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="field">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password">
+      </div>
+      <button type="button" class="cen-btn" id="btn-entrar" style="width:100%;">Entrar</button>
+      <div class="hint" id="login-erro"
+        style="display:none; color:var(--vermelho); font-weight:600; margin-top:12px;">
+        Usuário ou senha incorretos.
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Acesso de uso interno · estimativa para conferência · não substitui o contracheque oficial
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+
+</html>
